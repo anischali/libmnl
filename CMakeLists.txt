@@ -19,8 +19,12 @@ include_directories(
 )
 
 add_library(mnl
-            SHARED            
-            "${libmnl_SOURCES}"
+SHARED            
+"${libmnl_SOURCES}"
+)
+
+target_precompile_headers(mnl PUBLIC
+    "${libmnl_HEADERS}"
 )
 
 set(LIBVERSION "2:0:2")
